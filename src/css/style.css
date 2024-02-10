@@ -1,23 +1,22 @@
 body {
-    background-color: #AFEEEE;
-}
-.container-row{
-    width: 100px;
-    height: 100px;
-    background-color: #00FA9A;
-    border: 1px solid black;
-}
-
-.row {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-.container-goblin {
+.board {
+    background-color: aquamarine;
+    display: flex;
+    flex-wrap: wrap;
+    width: 411px;
+}
+
+.field {
+    height: 100px;
+    width: 100px;
+    border: 1px solid green;
+}
+
+.field_active {
     background-image: url('../img/goblin.png');
     background-size: contain;
-}
-
-.test {
-    color: red;
 }
