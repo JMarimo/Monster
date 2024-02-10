@@ -3,9 +3,10 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'images/[hash][ext][query]',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -15,14 +16,6 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
-      },
-      {
-        test: /\.svg$/,
-        type: 'asset/inline',
-      },
-      {
-        test: /\.(png|jpg|gif)$/i,
-        type: 'asset/resource',
       },
       {
         test: /\.html$/,
@@ -37,6 +30,10 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader, 'css-loader',
         ],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

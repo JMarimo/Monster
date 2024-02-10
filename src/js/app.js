@@ -1,13 +1,6 @@
-/* eslint-disable no-unused-vars */
-import Board from '../Board';
-
-const fields = Array.from(document.querySelectorAll('.field'));
-
-const board = new Board(fields);
+import Game from './Game';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const interval = setInterval(() => {
-    board.deleteActiveClass();
-    board.addActiveClass();
-  }, 1000);
+  // eslint-disable-next-line no-unused-vars
+  const game = new Game();
 });
